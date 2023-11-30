@@ -4,20 +4,22 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo><!-- setting GenerateAssemblyInfo to false causes this bug https://github.com/dotnet/project-system/issues/3934 -->
     <TargetFramework>net7.0</TargetFramework>
     <AssemblyName>Org.OpenAPITools</AssemblyName>
-    <PackageId>Org.OpenAPITools</PackageId>
+    <PackageId>MultipleAPISDK</PackageId>
     <OutputType>Library</OutputType>
-    <Authors>OpenAPI</Authors>
-    <Company>OpenAPI</Company>
+    <Authors>Devi Prakash</Authors>
+    <Company>Individual</Company>
     <AssemblyTitle>OpenAPI Library</AssemblyTitle>
-    <Description>A library generated from a OpenAPI doc</Description>
+    <Description>A library generated from a OpenAPI doc for multiple API's</Description>
     <Copyright>No Copyright</Copyright>
     <RootNamespace>Org.OpenAPITools</RootNamespace>
     <Version>1.0.0</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Org.OpenAPITools.xml</DocumentationFile>
-    <RepositoryUrl>https://github.com/GIT_USER_ID/GIT_REPO_ID.git</RepositoryUrl>
+    <RepositoryUrl>https://github.com/dprakash2101/MultipleAPISDK.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>Minor update</PackageReleaseNotes>
+    <PackageReleaseNotes>Testing</PackageReleaseNotes>
     <Nullable>annotations</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>MultipleAPISDK</Title>
   </PropertyGroup>
 
   <ItemGroup>
