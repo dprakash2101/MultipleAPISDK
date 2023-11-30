@@ -1,0 +1,418 @@
+openapi: 3.0.1
+info:
+  title: Combined API
+  version: "1.0"
+servers:
+- description: Employee API Server
+  url: https://localhost:7044/
+- description: Contact API Server
+  url: https://localhost:7207/
+paths:
+  /employee:
+    get:
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Employee'
+                type: array
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Employee'
+                type: array
+            text/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Employee'
+                type: array
+          description: Success
+      tags:
+      - Employee
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Employee'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Employee'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Employee'
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Employee'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Employee'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Employee'
+          description: Success
+      tags:
+      - Employee
+  /employee/{id}:
+    delete:
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          format: int32
+          type: integer
+        style: simple
+      responses:
+        "200":
+          description: Success
+      tags:
+      - Employee
+    get:
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          format: int32
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Employee'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Employee'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Employee'
+          description: Success
+      tags:
+      - Employee
+    put:
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          format: int32
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Employee'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Employee'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Employee'
+      responses:
+        "200":
+          description: Success
+      tags:
+      - Employee
+  /contact:
+    get:
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Contact'
+                type: array
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Contact'
+                type: array
+            text/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Contact'
+                type: array
+          description: Success
+      servers:
+      - url: https://localhost:7207/
+      tags:
+      - Contact
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Contact'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Contact'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Contact'
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Contact'
+                type: array
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Contact'
+                type: array
+            text/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Contact'
+                type: array
+          description: Success
+      servers:
+      - url: https://localhost:7207/
+      tags:
+      - Contact
+  /contact/{id}:
+    delete:
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          format: int32
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Contact'
+                type: array
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Contact'
+                type: array
+            text/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Contact'
+                type: array
+          description: Success
+      servers:
+      - url: https://localhost:7207/
+      tags:
+      - Contact
+    get:
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          format: int32
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Contact'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Contact'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Contact'
+          description: Success
+      servers:
+      - url: https://localhost:7207/
+      tags:
+      - Contact
+    put:
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          format: int32
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Contact'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Contact'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Contact'
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Contact'
+                type: array
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Contact'
+                type: array
+            text/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Contact'
+                type: array
+          description: Success
+      servers:
+      - url: https://localhost:7207/
+      tags:
+      - Contact
+components:
+  schemas:
+    DateOnly:
+      additionalProperties: false
+      properties:
+        year:
+          format: int32
+          type: integer
+        month:
+          format: int32
+          type: integer
+        day:
+          format: int32
+          type: integer
+        dayOfWeek:
+          $ref: '#/components/schemas/DayOfWeek'
+        dayOfYear:
+          format: int32
+          readOnly: true
+          type: integer
+        dayNumber:
+          format: int32
+          readOnly: true
+          type: integer
+      type: object
+    DayOfWeek:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      format: int32
+      type: integer
+    Employee:
+      additionalProperties: false
+      example:
+        fatherName: fatherName
+        roles: roles
+        employeeId: 0
+        experience: 1
+        isActive: true
+        bloodGroup: bloodGroup
+        isSupervisor: true
+        isDeleted: true
+        dateOfCreated: 2000-01-23T04:56:07.000+00:00
+        name: name
+        dateOfUpdated: 2000-01-23T04:56:07.000+00:00
+        isManager: true
+        department: department
+        age: 6
+      properties:
+        employeeId:
+          format: int32
+          type: integer
+        name:
+          nullable: true
+          type: string
+        age:
+          format: int32
+          type: integer
+        department:
+          nullable: true
+          type: string
+        experience:
+          format: int32
+          type: integer
+        bloodGroup:
+          nullable: true
+          type: string
+        fatherName:
+          nullable: true
+          type: string
+        isDeleted:
+          type: boolean
+        isActive:
+          type: boolean
+        dateOfCreated:
+          format: date-time
+          type: string
+        dateOfUpdated:
+          format: date-time
+          type: string
+        roles:
+          nullable: true
+          type: string
+        isSupervisor:
+          type: boolean
+        isManager:
+          type: boolean
+      type: object
+    Contact:
+      additionalProperties: false
+      example:
+        firstName: firstName
+        lastName: lastName
+        dateTimeCreated: 2000-01-23T04:56:07.000+00:00
+        isDeleted: true
+        nickName: nickName
+        id: 0
+        age: 6
+      properties:
+        id:
+          format: int32
+          type: integer
+        firstName:
+          nullable: true
+          type: string
+        lastName:
+          nullable: true
+          type: string
+        nickName:
+          nullable: true
+          type: string
+        age:
+          format: int32
+          type: integer
+        dateTimeCreated:
+          format: date-time
+          type: string
+        isDeleted:
+          type: boolean
+      type: object
+
